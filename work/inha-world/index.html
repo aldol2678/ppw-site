@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="INHA WORLD case study: product engineering, WebGPU, public CI, browser QA, and production verification.">
+  <title>INHA WORLD · PPW</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../">PPW</a>
+    <nav aria-label="Primary">
+      <a href="../">Work</a>
+      <a href="../../#capabilities">Capabilities</a>
+      <a href="../../#method">Method</a>
+    </nav>
+  </header>
+
+  <main class="shell case-study">
+    <section class="case-hero">
+      <p class="eyebrow">Product Engineering · Creative Technology · Web 3D</p>
+      <h1>INHA WORLD</h1>
+      <p class="lede">
+        A browser-based 3D virtual campus that became a live proving ground for product engineering,
+        world systems, public CI, browser QA, release gates, and production verification.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://inhagame.app">Open Production</a>
+        <a class="button ghost" href="https://github.com/aldol2678/inhagame">View public repository</a>
+      </div>
+      <div class="facts">
+        <div><span>Role</span><strong>Product / systems builder</strong></div>
+        <div><span>Stack</span><strong>JavaScript · PlayCanvas · WebGPU · Supabase · Vercel</strong></div>
+        <div><span>Status</span><strong>Live production · ongoing</strong></div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">01 · Problem</p>
+      <h2>Build a world, not a one-off demo.</h2>
+      <p>
+        A virtual campus starts as a rendering problem, but quickly becomes a product-systems problem:
+        movement, streaming, rooms, NPCs, quests, maps, accounts, settings, content tools, persistence,
+        deployment, and regressions all have to coexist without making each release fragile.
+      </p>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">02 · Product system</p>
+      <h2>One public repository, multiple product surfaces.</h2>
+      <div class="flow" aria-label="INHA WORLD development loop">
+        <span>Design</span><b>→</b><span>Implement</span><b>→</b><span>PR</span><b>→</b><span>CI / Browser QA</span><b>→</b><span>Production</span><b>→</b><span>Readback</span>
+      </div>
+      <p>
+        The repository is structured as a public monorepo. INHA WORLD lives under <span class="mono">apps/world</span>,
+        alongside database migrations and tests, verification scripts, editor/studio tooling, serverless handlers,
+        an NPC factory, and asset conversion utilities. The World prioritizes WebGPU with a WebGL2 fallback.
+      </p>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">03 · Verification architecture</p>
+      <h2>Regression prevention is part of the product.</h2>
+      <div class="evidence-grid">
+        <article class="evidence-card">
+          <span class="evidence-label">Protected main</span>
+          <strong class="evidence-value">verify required</strong>
+          <p>Changes to main go through pull requests and the required <span class="mono">verify</span> check.</p>
+        </article>
+        <article class="evidence-card">
+          <span class="evidence-label">Public CI</span>
+          <strong class="evidence-value">public-ci + public-db</strong>
+          <p>The verify job runs static/unit/build checks and a disposable Supabase replay with database verification.</p>
+        </article>
+        <article class="evidence-card">
+          <span class="evidence-label">Browser QA</span>
+          <strong class="evidence-value">many focused workflows</strong>
+          <p>Dedicated browser checks cover world stability, photo mode, maps, rooms, UI focus, inventory, models, and more.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">04 · Evidence snapshot · 2026-10-07</p>
+      <h2>A feature went from PR to matching Production SHA.</h2>
+      <p>
+        Photo Mode 2.0 is a compact example of the release discipline. The merged feature added global free-camera ownership,
+        desktop/mobile controls, exact camera restoration, and PNG capture, then moved through unit and browser validation into Production.
+      </p>
+
+      <div class="metric-grid">
+        <article><span>World unit suite</span><strong>3519 / 3519 PASS</strong></article>
+        <article><span>Photo Mode tests</span><strong>95 / 95 PASS</strong></article>
+        <article><span>Browser QA</span><strong>Desktop · Portrait · Landscape PASS</strong></article>
+        <article><span>PR workflow runs observed</span><strong>16 / 16 SUCCESS</strong></article>
+      </div>
+
+      <div class="evidence-note">
+        <strong>Production provenance snapshot</strong>
+        <p>
+          GitHub main was <span class="mono">c051eb5c…</span>. Vercel Production was READY from the same
+          <span class="mono">c051eb5c…</span> source SHA, and <a class="inline-link" href="https://inhagame.app">inhagame.app</a>
+          returned HTTP 200 at verification time.
+        </p>
+      </div>
+
+      <div class="evidence-links">
+        <a href="https://github.com/aldol2678/inhagame/pull/272">PR #272 · Photo Mode 2.0 →</a>
+        <a href="https://github.com/aldol2678/inhagame/commit/c051eb5c2282ac1323aa7ac4462651e0e2f57e3e">Verified main commit →</a>
+        <a href="https://github.com/aldol2678/inhagame/pull/271">Release train gate example · PR #271 →</a>
+      </div>
+    </section>
+
+    <section class="case-section two-column">
+      <div>
+        <p class="eyebrow">05 · Key decisions</p>
+        <h2>Treat shipping as a chain of evidence.</h2>
+      </div>
+      <ul class="decision-list">
+        <li><strong>Separate public development from production secrets.</strong> The public repository contains development code and reproducible checks, while production credentials and operational overlays remain separate.</li>
+        <li><strong>Protect main with a required verification gate.</strong> The repository contract makes regression checks part of normal change flow rather than a cleanup step.</li>
+        <li><strong>Use focused browser workflows for fragile surfaces.</strong> High-risk interactions receive targeted browser QA instead of relying only on a monolithic smoke.</li>
+        <li><strong>Verify the deployed source.</strong> A release is not treated as complete until Production is READY and its Git SHA can be tied back to the intended main revision.</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">06 · What this demonstrates</p>
+      <div class="capability-grid compact">
+        <article><h3>Product engineering</h3><p>Turning a growing interactive product into maintainable modules, workflows, and release gates.</p></article>
+        <article><h3>Creative technology</h3><p>Combining real-time 3D, game systems, web delivery, and campus-oriented experience design.</p></article>
+        <article><h3>QA automation</h3><p>Unit, database, and focused browser checks integrated into the development lifecycle.</p></article>
+        <article><h3>Production operations</h3><p>Source-to-deployment provenance, readback, rollback-aware release thinking, and live verification.</p></article>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">Public evidence</p>
+      <h2>Inspect the system, not just the screenshots.</h2>
+      <div class="evidence-links stacked">
+        <a href="https://inhagame.app">Live product · inhagame.app →</a>
+        <a href="https://github.com/aldol2678/inhagame">Public repository · aldol2678/inhagame →</a>
+        <a href="https://github.com/aldol2678/inhagame/blob/main/apps/world/README.md">INHA WORLD technical README →</a>
+      </div>
+    </section>
+
+    <nav class="case-nav" aria-label="Case study navigation">
+      <a href="../">← All work</a>
+      <a href="../aram/">ARAM case study →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer shell">
+    <span>PPW · INHA WORLD case study v1</span>
+    <span>Evidence snapshot: 2026-10-07</span>
+  </footer>
+</body>
+</html>
