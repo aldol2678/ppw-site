@@ -1,0 +1,98 @@
+[
+  {
+    "id": "aram",
+    "name": "ARAM",
+    "status": "ongoing",
+    "summary": "An agentic AI operating workflow for routing, bounded execution, verification, and explicit return states.",
+    "role": "System designer / builder",
+    "capabilities": [
+      "Agentic AI",
+      "Workflow Automation",
+      "AI Reliability",
+      "Systems Design"
+    ],
+    "targetRoles": [
+      "Agentic AI Engineer",
+      "AI Systems Engineer",
+      "AI Workflow Engineer",
+      "Solutions Engineer"
+    ],
+    "contribution": [
+      "Designed task routing and handoff concepts",
+      "Defined explicit execution and verification boundaries",
+      "Separated provider acknowledgement from verified completion"
+    ],
+    "evidence": {
+      "repository": null,
+      "production": null,
+      "pullRequests": [],
+      "tests": [],
+      "documents": [],
+      "media": []
+    },
+    "evidenceStrength": "unrated",
+    "publicSafe": true,
+    "caseStudyPath": "/work/aram/"
+  },
+  {
+    "id": "inha-world",
+    "name": "INHA WORLD",
+    "status": "case-study-in-progress",
+    "summary": "A browser-based 3D virtual campus used as a live proving ground for product engineering, automation, and QA.",
+    "role": "Product / systems builder",
+    "capabilities": [
+      "Product Engineering",
+      "Creative Technology",
+      "Web 3D",
+      "CI/CD",
+      "QA Automation"
+    ],
+    "targetRoles": [
+      "AI Product Engineer",
+      "Product Engineer",
+      "Creative Technologist",
+      "Technical Game Designer"
+    ],
+    "contribution": [],
+    "evidence": {
+      "repository": "https://github.com/aldol2678/inhagame",
+      "production": null,
+      "pullRequests": [],
+      "tests": [],
+      "documents": [],
+      "media": []
+    },
+    "evidenceStrength": "unrated",
+    "publicSafe": true,
+    "caseStudyPath": null
+  },
+  {
+    "id": "chaevi",
+    "name": "CHAEVI",
+    "status": "case-study-in-progress",
+    "summary": "An AI routing product exploring goals, tools, permissions, and execution surfaces.",
+    "role": "Product / systems builder",
+    "capabilities": [
+      "AI Product",
+      "Automation",
+      "Tooling"
+    ],
+    "targetRoles": [
+      "AI Product Engineer",
+      "AI Automation Engineer",
+      "Solutions Engineer"
+    ],
+    "contribution": [],
+    "evidence": {
+      "repository": "https://github.com/aldol2678/chaevi",
+      "production": null,
+      "pullRequests": [],
+      "tests": [],
+      "documents": [],
+      "media": []
+    },
+    "evidenceStrength": "unrated",
+    "publicSafe": true,
+    "caseStudyPath": null
+  }
+]
