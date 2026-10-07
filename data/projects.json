@@ -37,34 +37,52 @@
   {
     "id": "inha-world",
     "name": "INHA WORLD",
-    "status": "case-study-in-progress",
-    "summary": "A browser-based 3D virtual campus used as a live proving ground for product engineering, automation, and QA.",
+    "status": "ongoing",
+    "summary": "A production browser-based 3D virtual campus with public CI, focused browser QA, protected-main development, and deployment provenance.",
     "role": "Product / systems builder",
+    "period": "Ongoing",
     "capabilities": [
       "Product Engineering",
       "Creative Technology",
       "Web 3D",
       "CI/CD",
-      "QA Automation"
+      "QA Automation",
+      "Production Operations"
     ],
     "targetRoles": [
       "AI Product Engineer",
       "Product Engineer",
       "Creative Technologist",
-      "Technical Game Designer"
+      "Technical Game Designer",
+      "QA Automation Engineer"
     ],
-    "contribution": [],
+    "contribution": [
+      "Built and operated a browser-based 3D world and game hub",
+      "Integrated protected-main PR flow with public CI and focused browser QA",
+      "Used source-to-deployment SHA readback as a Production completion check"
+    ],
     "evidence": {
       "repository": "https://github.com/aldol2678/inhagame",
-      "production": null,
-      "pullRequests": [],
-      "tests": [],
-      "documents": [],
+      "production": "https://inhagame.app",
+      "pullRequests": [
+        "https://github.com/aldol2678/inhagame/pull/272",
+        "https://github.com/aldol2678/inhagame/pull/271"
+      ],
+      "tests": [
+        "Photo Mode 2.0: World unit suite 3519/3519 PASS",
+        "Photo Mode 2.0: Photo Mode tests 95/95 PASS",
+        "Desktop / portrait / landscape browser QA PASS",
+        "16 observed PR-triggered GitHub Actions workflow runs SUCCESS"
+      ],
+      "documents": [
+        "https://github.com/aldol2678/inhagame/blob/main/README.md",
+        "https://github.com/aldol2678/inhagame/blob/main/apps/world/README.md"
+      ],
       "media": []
     },
-    "evidenceStrength": "unrated",
+    "evidenceStrength": "A",
     "publicSafe": true,
-    "caseStudyPath": null
+    "caseStudyPath": "/work/inha-world/"
   },
   {
     "id": "chaevi",
