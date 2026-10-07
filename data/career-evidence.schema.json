@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/aldol2678/ppw-site/blob/main/data/career-evidence.schema.json",
+  "title": "PPW Career Evidence Project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "status",
+    "summary",
+    "capabilities",
+    "targetRoles",
+    "publicSafe",
+    "evidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["live", "ongoing", "completed", "archived", "case-study-in-progress"]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "period": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string" }
+    },
+    "targetRoles": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string" }
+    },
+    "contribution": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repository": { "type": ["string", "null"] },
+        "production": { "type": ["string", "null"] },
+        "pullRequests": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tests": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "documents": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "media": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "evidenceStrength": {
+      "type": "string",
+      "enum": ["A", "B", "C", "unrated"]
+    },
+    "publicSafe": {
+      "type": "boolean"
+    },
+    "caseStudyPath": {
+      "type": ["string", "null"]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ARAM case study: agentic AI workflow architecture.">
+  <title>ARAM · PPW</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../">PPW</a>
+    <nav aria-label="Primary">
+      <a href="../">Work</a>
+      <a href="../../#capabilities">Capabilities</a>
+      <a href="../../#method">Method</a>
+    </nav>
+  </header>
+
+  <main class="shell case-study">
+    <section class="case-hero">
+      <p class="eyebrow">Agentic AI · Workflow Architecture</p>
+      <h1>ARAM</h1>
+      <p class="lede">
+        An AI operating workflow designed to turn ambiguous requests into bounded execution,
+        evidence-backed verification, and explicit return states.
+      </p>
+      <div class="facts">
+        <div><span>Role</span><strong>System designer / builder</strong></div>
+        <div><span>Focus</span><strong>Agent orchestration &amp; reliability</strong></div>
+        <div><span>Status</span><strong>Ongoing system</strong></div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">01 · Problem</p>
+      <h2>AI work breaks when responsibility is fuzzy.</h2>
+      <p>
+        As workflows grow across models, tools, repositories, and external services,
+        the hard problem becomes coordination: who owns a decision, what can execute,
+        what must be verified, and what happens when the state is uncertain.
+      </p>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">02 · System</p>
+      <h2>A workflow with explicit boundaries.</h2>
+      <div class="flow" aria-label="ARAM high-level flow">
+        <span>Resolve</span><b>→</b><span>Route</span><b>→</b><span>Execute</span><b>→</b><span>Verify</span><b>→</b><span>Return</span>
+      </div>
+      <p>
+        ARAM treats an AI task as a stateful workflow rather than a single prompt.
+        The public case study intentionally describes the architecture at a high level
+        and excludes private operational details.
+      </p>
+    </section>
+
+    <section class="case-section two-column">
+      <div>
+        <p class="eyebrow">03 · Key decisions</p>
+        <h2>Design for uncertainty.</h2>
+      </div>
+      <ul class="decision-list">
+        <li><strong>Separate authority from execution.</strong> The system should know who may decide before asking who can act.</li>
+        <li><strong>Prefer explicit states.</strong> Unknown, conflict, blocked, and verified are different outcomes.</li>
+        <li><strong>Require evidence for completion.</strong> A successful tool response is not automatically a completed task.</li>
+        <li><strong>Keep handoffs inspectable.</strong> The next executor should receive scope, constraints, evidence, and a return contract.</li>
+      </ul>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">04 · Verification</p>
+      <h2>Completion requires readback.</h2>
+      <p>
+        The workflow distinguishes proposed changes, execution, provider acknowledgement,
+        and verified final state. Where practical, changes are followed by a readback that
+        checks the intended postcondition instead of trusting a success banner.
+      </p>
+      <div class="evidence-note">
+        <strong>Public evidence policy</strong>
+        <p>Only sanitized architecture and externally safe evidence are published here. Internal operating records remain outside this repository.</p>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <p class="eyebrow">05 · What this demonstrates</p>
+      <div class="capability-grid compact">
+        <article><h3>Agent orchestration</h3><p>Task decomposition, routing, handoffs, and bounded tool use.</p></article>
+        <article><h3>AI reliability</h3><p>Evidence, explicit uncertainty, postcondition checks, and recovery paths.</p></article>
+        <article><h3>Workflow design</h3><p>Turning informal work into repeatable operating contracts.</p></article>
+        <article><h3>Systems thinking</h3><p>Connecting product, engineering, operations, and governance concerns.</p></article>
+      </div>
+    </section>
+
+    <nav class="case-nav" aria-label="Case study navigation">
+      <a href="../">← All work</a>
+      <a href="../../">Home →</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer shell">
+    <span>PPW · ARAM case study v1</span>
+    <span>Public-safe overview</span>
+  </footer>
+</body>
+</html>
